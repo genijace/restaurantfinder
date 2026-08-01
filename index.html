@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Food Finder Libreville</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Google Analytics (GA4) - remplacez G-XXXXXXX par votre Measurement ID -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXX"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);} 
+        gtag('js', new Date());
+        gtag('config', 'G-XXXXXXX');
+    </script>
+</head>
+
+<body>
+
+<header>
+    <nav class="navbar">
+        <div class="logo">FoodFinder</div>
+        <ul class="menu">
+            <li><a href="#accueil">Accueil</a></li>
+            <li><a href="#restaurants">Restaurants</a></li>
+            <li><a href="#plats">Plats</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+</header>
+
+<main>
+    <section id="accueil" class="hero">
+        <div class="overlay"></div>
+        <div class="hero-container">
+            <div class="left">
+                <h1 class="typing">
+                    Trouvez le meilleur restaurant à Libreville
+                </h1>
+
+                <p>
+                    Recherchez un plat et découvrez immédiatement où le déguster.
+                </p>
+
+                <div class="search-box hero-search">
+                    <input id="searchInputHero" class="search-input" type="text" placeholder="Ex : Pizza" autocomplete="off">
+                    <button type="button">
+                        Rechercher
+                    </button>
+                </div>
+            </div>
+
+            <div class="right">
+                <div class="plate">
+                    <img src="images/hero/pizza.png" class="food pizza">
+                    <img src="images/hero/sushi.png" class="food sushi">
+                    <img src="images/hero/burger.png" class="food burger">
+                    <img src="images/hero/nyembwe.png" class="food nyembwe">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="restaurants" class="categories">
+        <h2>Nos restaurants</h2>
+        <div id="restaurant-list" class="cards"></div>
+    </section>
+
+    <section id="plats" class="results">
+        <h2>Rechercher un plat</h2>
+        <div class="search-box">
+            <input id="searchInputResults" class="search-input" type="text" placeholder="Exemple : Pizza, Sushi, Poulet Nyembwe..." autocomplete="off">
+            <button type="button">Rechercher</button>
+        </div>
+        <div id="resultats">
+            <p class="message">Tapez un plat dans la barre de recherche pour voir les restaurants correspondants.</p>
+        </div>
+    </section>
+
+    <section id="contact" class="contact">
+        <h2>Contact</h2>
+        <p>Pour réserver ou demander un menu, contactez-nous à l’adresse suivante :</p>
+        <p><strong>Email :</strong> contact@foodfinder.ga</p>
+        <p><strong>Téléphone :</strong> +241 077 23 45 67</p>
+    </section>
+</main>
+
+<script src="js/script.js"></script>
+
+</body>
+</html>
