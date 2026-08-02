@@ -65,7 +65,7 @@ const restaurants = [
 const champs = document.querySelectorAll(".search-input");
 const resultat = document.getElementById("resultats");
 const restaurantList = document.getElementById("restaurant-list");
-const bouton = document.querySelector("#plats button");
+const boutons = document.querySelectorAll(".hero-search button, #plats button");
 const sectionPlats = document.getElementById("plats");
 
 function scrollToResults() {
@@ -169,14 +169,6 @@ function synchroniserChamps(valeur) {
     });
 }
 
-function obtenirChampActif() {
-    if (document.activeElement && document.activeElement.classList.contains("search-input")) {
-        return document.activeElement;
-    }
-
-    return document.querySelector(".search-input:focus") || champs[0] || null;
-}
-
 function lancerRechercheDepuisChamp(champ, shouldScroll = true) {
     if (!champ) return;
 
@@ -245,12 +237,13 @@ champs.forEach(function(champ) {
     });
 });
 
-if (bouton) {
+boutons.forEach(function(bouton) {
     bouton.addEventListener("click", function() {
-        const champActif = obtenirChampActif();
-        lancerRechercheDepuisChamp(champActif, true);
+        const boite = bouton.closest(".search-box");
+        const champProche = boite ? boite.querySelector(".search-input") : champs[0];
+        lancerRechercheDepuisChamp(champProche, true);
     });
-}
+});
 
 renderRestaurants(restaurants, restaurantList, "", false);
 rechercherPlats("", false);
