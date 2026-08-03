@@ -4,6 +4,38 @@ if (titre) {
     titre.textContent = "Trouvez le meilleur restaurant à Libreville";
 }
 
+// Hamburger Menu
+document.addEventListener('DOMContentLoaded', function() {
+    const hamburger = document.getElementById('hamburger');
+    const menu = document.getElementById('menu');
+    
+    if (hamburger && menu) {
+        hamburger.addEventListener('click', function() {
+            hamburger.classList.toggle('active');
+            menu.classList.toggle('active');
+        });
+        
+        // Fermer le menu quand on clique sur un lien
+        menu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', function() {
+                hamburger.classList.remove('active');
+                menu.classList.remove('active');
+            });
+        });
+        
+        // Fermer le menu quand on clique en dehors
+        document.addEventListener('click', function(event) {
+            const isClickInsideMenu = menu.contains(event.target);
+            const isClickOnHamburger = hamburger.contains(event.target);
+            
+            if (!isClickInsideMenu && !isClickOnHamburger && menu.classList.contains('active')) {
+                hamburger.classList.remove('active');
+                menu.classList.remove('active');
+            }
+        });
+    }
+});
+
 const restaurants = [
     {
         nom: "L'ASSIETTE D'OR",
@@ -244,6 +276,20 @@ boutons.forEach(function(bouton) {
         lancerRechercheDepuisChamp(champProche, true);
     });
 });
+
+// Fallback: ensure hero search button always triggers search (handles edge cases on pages)
+const heroBtn = document.querySelector('.hero-search button');
+if (heroBtn) {
+    heroBtn.addEventListener('click', function() {
+        const champ = document.querySelector('#searchInputHero');
+        if (champ) lancerRechercheDepuisChamp(champ, true);
+    });
+    // also support pointerdown/touchstart for mobile devices
+    heroBtn.addEventListener('pointerdown', function() {
+        const champ = document.querySelector('#searchInputHero');
+        if (champ) lancerRechercheDepuisChamp(champ, false);
+    });
+}
 
 renderRestaurants(restaurants, restaurantList, "", false);
 rechercherPlats("", false);
