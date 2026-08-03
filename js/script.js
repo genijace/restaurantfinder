@@ -1,4 +1,4 @@
-onst titre = document.getElementById("titre");
+const titre = document.getElementById("titre");
 
 if (titre) {
     titre.textContent = "Trouvez le meilleur restaurant à Libreville";
