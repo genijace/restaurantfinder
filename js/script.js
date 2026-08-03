@@ -61,7 +61,7 @@ const restaurants = [
     },
     {
         nom: "Tokyo Sushi",
-        restaurantImage: "images/Tokyo.jpg",
+        restaurantImage: "images/chine.jpg",
         plats: [
             { nom: "Sushi", image: "images/sushi.jpg" },
             { nom: "Maki", image: "images/Curry.jpg" },
