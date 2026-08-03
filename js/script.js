@@ -1,4 +1,4 @@
-const titre = document.getElementById("titre");
+onst titre = document.getElementById("titre");
 
 if (titre) {
     titre.textContent = "Trouvez le meilleur restaurant à Libreville";
@@ -61,7 +61,7 @@ const restaurants = [
     },
     {
         nom: "Tokyo Sushi",
-        restaurantImage: "images/Lubumbashi.jpg",
+        restaurantImage: "images/Tokyo.jpg",
         plats: [
             { nom: "Sushi", image: "images/sushi.jpg" },
             { nom: "Maki", image: "images/Curry.jpg" },
