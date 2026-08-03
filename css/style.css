@@ -45,10 +45,11 @@ header{
 }
 
 .menu li a{
-    color:#333;
+    color:#000000;
     text-decoration:none;
     font-size:17px;
     transition:.3s;
+    font-weight:600;
 }
 
 .menu li a:hover{
