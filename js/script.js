@@ -86,7 +86,7 @@ const restaurants = [
         restaurantImage: "images/Gabon.jpg.jpg",
         plats: [
             { nom: "Viande de brousse", image: "images/Viande de brousse.jpg" },
-            { nom: "Feuille de Manioc", image: "images/feuille de manioc.mp4", video: true },
+            { nom: "Feuille de Manioc", image: "images/Feuille de manioc.mp4", video: true },
             { nom: "Le plat Spécial", image: "images/Sauce.mp4", video: true }
         ],
         adresse: "Charbonnages",
